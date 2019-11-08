@@ -1,0 +1,3 @@
+Start Notes on Final Project
+began project with loading dplyr and tidyverse along with read.csv 
+
