@@ -1,3 +1,2 @@
-Start Notes on Final Project
-began project with loading dplyr and tidyverse along with read.csv 
-
+added first dplyr command - select...to whittle data down to columns that will be used
+in data series.
