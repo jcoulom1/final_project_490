@@ -1,2 +1,6 @@
 added first dplyr command - select...to whittle data down to columns that will be used
 in data series.
+
+reviewed data pulled from first set of commands, determined it insufficient for analysis.
+
+Created new dataframe with select/filter sequence to pull data for magma source review.
