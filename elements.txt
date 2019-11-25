@@ -4,3 +4,6 @@ in data series.
 reviewed data pulled from first set of commands, determined it insufficient for analysis.
 
 Created new dataframe with select/filter sequence to pull data for magma source review.
+
+pulled new data set from PetDB with filters "Sample Type" = igneous volcanic mafic
+with subsets of alkali basalt, tholeiite, trachyte and trachytebasalt with hopes more information will be available for analysis
