@@ -1,0 +1,7 @@
+uploaded a new data file from PetDB with criteria of "Sample Type" = igneous volcanic mafic
+with catergories of alkali basalt, tholeiite, trachyte and trachytebasalt
+
+pulled new data set from PetDB with filters "Sample Type" = igneous volcanic mafic
+with subsets of alkali basalt, tholeiite, trachyte and trachytebasalt with hopes
+for more info to be available
+
