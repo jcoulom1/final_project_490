@@ -7,3 +7,6 @@ Created new dataframe with select/filter sequence to pull data for magma source 
 
 pulled new data set from PetDB with filters "Sample Type" = igneous volcanic mafic
 with subsets of alkali basalt, tholeiite, trachyte and trachytebasalt with hopes more information will be available for analysis
+
+narrowed down the table to the columns most needed and then filtered for alkali and tholeiite
+then did a count to see if there were enough of those to compare - THERE ARE
