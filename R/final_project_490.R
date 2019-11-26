@@ -18,10 +18,17 @@ cnt_alk[names(cnt_alk) == "THOLEIITE"]
 ## there does appear to be enough data to do a chemcial comparision between 
 ## tholeiitic basalt and alkali basalt
 
-## Let's see if we can look at magma sources using just basalt and major element data
-basalt <- select(mydata, "SAMPLE.ID", "METHOD":"ZN") %>%
-  filter(TIO2 != "NA")
+##Let's load a different data set and see if we can pull more information
 
+## first upload new data set
+mydata_2 <- read.csv("final_project_490/data/earthchem_dataset2.csv", header = TRUE)
+
+## Let's see if there are more Alkali vs Tholeiite choices available
+alk_thol <- select(mydata_2, "SAMPLE.ID", "METHOD":"ZR") %>%  ##whittle down the columns to just the one's needed
+  filter(ROCK.NAME == "ALKALI BASALT" | ROCK.NAME == "THOLEIITE")
+
+## Look at table to see if improved results
+cnt_rocks <- table(alk_thol$ROCK.NAME)
 
 
 
