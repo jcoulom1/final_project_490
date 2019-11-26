@@ -25,11 +25,14 @@ mydata_2 <- read.csv("final_project_490/data/earthchem_dataset2.csv", header = T
 
 ## Let's see if there are more Alkali vs Tholeiite choices available
 alk_thol <- select(mydata_2, "SAMPLE.ID", "METHOD":"ZR") %>%  ##whittle down the columns to just the one's needed
-  filter(ROCK.NAME == "ALKALI BASALT" | ROCK.NAME == "THOLEIITE")
+  filter(ROCK.NAME == "ALKALI BASALT" | ROCK.NAME == "THOLEIITE") ##choose the two rock names I want to analyze
 
 ## Look at table to see if improved results
 cnt_rocks <- table(alk_thol$ROCK.NAME)
 
+## first let's filter further to only look at samples that contain data for the elements we need
+sio2_sort <- filter(alk_thol, alk_thol$SIO2 != "NA")
 
-
+##before I continue I would like to double check I still have alk & thol avail
+cnt_rocks <- table(sio2_sort$ROCK.NAME)
          
