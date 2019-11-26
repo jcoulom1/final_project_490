@@ -13,3 +13,6 @@ then did a count to see if there were enough of those to compare - THERE ARE
 
 saved code and recommitting/pushing
 
+added a new filter to ensure I had samples with sio2 info present (I do) and then
+counted again to be sure I still had both alkali basalt and tholeiite samples to analyze
+
