@@ -18,3 +18,6 @@ counted again to be sure I still had both alkali basalt and tholeiite samples to
 
 changed column TITLE from factor to character class so it could be searchable
 
+so after going back up to original code and adding gregl as a filter to include only
+hawaii samples (which worked), the results do not include any alkali basalt samples
+
