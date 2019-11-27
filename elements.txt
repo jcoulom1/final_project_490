@@ -16,3 +16,5 @@ saved code and recommitting/pushing
 added a new filter to ensure I had samples with sio2 info present (I do) and then
 counted again to be sure I still had both alkali basalt and tholeiite samples to analyze
 
+changed column TITLE from factor to character class so it could be searchable
+
