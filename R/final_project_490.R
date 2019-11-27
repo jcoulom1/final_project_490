@@ -34,6 +34,12 @@ cnt_rocks <- table(alk_thol$ROCK.NAME)
 ##so after all that work, it turns out that when filtered to "hawaii", I am left
 ## with no alkali basalt samples to compare against
 
+## sO...I am going to filter for hawaii and major element data
+sio2_sort <- select(mydata_2, "SAMPLE.ID":"TITLE", "METHOD":"ZR") %>%  ##whittle down the columns to just the one's needed
+  filter(mydata_2$SIO2 != "NA") %>%  ##filter for only those rows with data avail for sio2
+  filter(grepl("HAWAII", TITLE)) ##filter for just samples from hawaii
+
+    
  
 
 

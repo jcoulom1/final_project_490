@@ -21,3 +21,7 @@ changed column TITLE from factor to character class so it could be searchable
 so after going back up to original code and adding gregl as a filter to include only
 hawaii samples (which worked), the results do not include any alkali basalt samples
 
+Doing new analysis to pull data needed for next step (Mg to Si).  same selection of col
+and added filter for sio2 and then kept the filter for only hawaiian samples
+
+
