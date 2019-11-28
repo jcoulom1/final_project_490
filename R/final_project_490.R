@@ -38,7 +38,12 @@ cnt_rocks <- table(alk_thol$ROCK.NAME)
 sio2_sort <- select(mydata_2, "SAMPLE.ID":"TITLE", "METHOD":"ZR") %>%  ##whittle down the columns to just the one's needed
   filter(mydata_2$SIO2 != "NA") %>%  ##filter for only those rows with data avail for sio2
   filter(grepl("HAWAII", TITLE)) ##filter for just samples from hawaii
-
+  
+## create a plot that looks at the new data and compares sio2 with mgo
+sio2_plot2 <- ggplot(sio2_sort, aes(x = sio2_sort$SIO2, y = sio2_sort$MGO)) + 
+  geom_line() + 
+  labs((title = "SiO2 compared to MgO"), xlab("SiO2"), ylab("MgO"))
+sio2_plot2
     
  
 

@@ -24,4 +24,8 @@ hawaii samples (which worked), the results do not include any alkali basalt samp
 Doing new analysis to pull data needed for next step (Mg to Si).  same selection of col
 and added filter for sio2 and then kept the filter for only hawaiian samples
 
+Switched to a new branch while I try all this and check it out
+
+created new plot comparing sio2 with mgo looking at only hawaii samples
+looks like there might be something good here
 
