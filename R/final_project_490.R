@@ -40,11 +40,20 @@ sio2_sort <- select(mydata_2, "SAMPLE.ID":"TITLE", "METHOD":"ZR") %>%  ##whittle
   filter(grepl("HAWAII", TITLE)) ##filter for just samples from hawaii
   
 ## create a plot that looks at the new data and compares sio2 with mgo
-sio2_plot2 <- ggplot(sio2_sort, aes(x = sio2_sort$SIO2, y = sio2_sort$MGO)) + 
-  geom_line() + 
-  labs((title = "SiO2 compared to MgO"), xlab("SiO2"), ylab("MgO"))
+sio2_plot2 <- ggplot(sio2_sort, aes(x = sio2_sort$SIO2, y = sio2_sort$MGO)) + ##created plot for sio2 to mgo
+  geom_line() +   ## made it a line plot
+  geom_smooth() +
+  ggtitle("SiO2 compared to MgO") +
+  xlab("SiO2") +
+  ylab("MgO")
 sio2_plot2
-    
+##change color and appearance of title and axis
+sio2_plot2 + theme(
+  plot.title = element_text(color = "dodgerblue3", size = 14, family = "TT Arial", face = "bold"),
+  axis.title.x = element_text(color = "dodgerblue3", size = 10, family = "TT Arial"),
+  axis.title.y = element_text(color = "dodgerblue3", size = 10, family = "TT Arial")
+)
+sio2_plot2   
  
 
 

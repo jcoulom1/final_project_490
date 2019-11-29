@@ -29,3 +29,5 @@ Switched to a new branch while I try all this and check it out
 created new plot comparing sio2 with mgo looking at only hawaii samples
 looks like there might be something good here
 
+changed the appearance of the title and axis lables and added a trend line
+
