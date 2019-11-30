@@ -31,3 +31,5 @@ looks like there might be something good here
 
 changed the appearance of the title and axis lables and added a trend line
 
+added comments and preparing to push branch back to master
+
