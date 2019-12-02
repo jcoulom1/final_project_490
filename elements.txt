@@ -33,3 +33,5 @@ changed the appearance of the title and axis lables and added a trend line
 
 added comments and preparing to push branch back to master
 
+Updated all code to recreate and better document progression of data analysis
+

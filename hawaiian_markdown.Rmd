@@ -1,0 +1,43 @@
+---
+title: "Hawaiian Basalts"
+author: "Julie M. Coulombe"
+date: "11/30/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(tidyverse)
+```
+
+## Alkali-Basalt vs Tholeiite
+
+The dataset was pulled from <https://search.earthchem.org/> with Feature Name = OceanIsland:Hawaii and Sample Types = igenous:volcanicmafic:alkali.basalt, tholeiite, trachyte, trachytebasalt
+
+
+```{r mydata}
+alkali_thol <- select(mydata, "SAMPLE.ID", "METHOD":"ZR") %>%
+  filter(ROCK.NAME == "ALKALI BASALT" | ROCK.NAME == "THOLEIITE")
+cnt_alk <- table(alkali_thol$ROCK.NAME)
+cnt_alk
+```
+
+This data set did not include enough information to analyze - due to only having
+1 alkali basalt.  When trying to filter for only sio2, that data was not available for any of the observations.  At this point I went back to the original database and pulled a new dataset.
+
+```{r mydata_2}
+alk_thol <- select(mydata_2, "SAMPLE.ID", "METHOD":"ZR") %>%  
+  filter(ROCK.NAME == "ALKALI BASALT" | ROCK.NAME == "THOLEIITE")
+cnt_rocks <- table(alk_thol$ROCK.NAME)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

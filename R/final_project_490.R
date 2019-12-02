@@ -11,9 +11,8 @@ alkali_thol <- select(mydata, "SAMPLE.ID", "METHOD":"ZR") %>%
   filter(ROCK.NAME == "ALKALI BASALT" | ROCK.NAME == "THOLEIITE")
 
 #count variables to be sure the dataset is large enough
-cnt_alk <- table(alkali_thol$ROCK.NAME)
-cnt_alk[names(cnt_alk) == "ALKALI BASALT"]  #I know this additional count was not needed since table was so small, but did it for practice anyway
-cnt_alk[names(cnt_alk) == "THOLEIITE"]
+cnt_rocks <- table(alkali_thol$ROCK.NAME)
+cnt_rocks
 
 ## there does appear to be enough data to do a chemcial comparision between 
 ## tholeiitic basalt and alkali basalt
@@ -24,12 +23,27 @@ cnt_alk[names(cnt_alk) == "THOLEIITE"]
 mydata_2 <- read.csv("final_project_490/data/earthchem_dataset2.csv", header = TRUE)
 
 ## Let's see if there are more Alkali vs Tholeiite choices available
-alk_thol <- select(mydata_2, "SAMPLE.ID":"TITLE", "METHOD":"ZR") %>%  ##whittle down the columns to just the one's needed
-  filter(grepl("HAWAII", mydata_2$TITLE)) %>% ## sort for "hawaii" since I did not limit my orig data set to hawaii samples
-           filter(ROCK.NAME == "ALKALI BASALT" | ROCK.NAME == "THOLEIITE") ##choose the two rock names I want to analyze
+alk_thol2 <- select(mydata_2, "SAMPLE.ID":"TITLE", "METHOD":"ZR") %>%  ##whittle down the columns to just the one's needed
+  filter(ROCK.NAME == "ALKALI BASALT" | ROCK.NAME == "THOLEIITE") ##choose the two rock names I want to analyze
 
 ## Look at table to see if improved results
-cnt_rocks <- table(alk_thol$ROCK.NAME)
+cnt_rocks2 <- table(alk_thol2$ROCK.NAME)
+cnt_rocks2
+
+##Yay - lots of alkali basalt to compare to thoeliite...let's plot!
+alk_thol2_plot <-  ggplot(alk_thol2, aes(x = alk_thol2$SIO2, y = alk_thol2$NA2O + alk_thol2$K2O)) +
+  geom_line()
+alk_thol2_plot
+
+##this plot looks crazy, what happened??  Going back to review my new data set, I discover
+## that I did not include "hawaii" as a parameter - so this is all samples...uh oh
+
+##So let's try and pull just samples referring specifically to hawaii and see if that works
+alk_thol3 <- select(mydata_2, "SAMPLE.ID":"TITLE", "METHOD":"ZR") %>%  ##whittle down the columns to just the one's needed
+  filter(grepl("HAWAII", mydata_2$TITLE)) %>% ## sort for "hawaii" since I did not limit my orig data set to hawaii samples
+  filter(ROCK.NAME == "ALKALI BASALT" | ROCK.NAME == "THOLEIITE")##choose the two rock names I want to analyze
+cnt_rocks3 <- table(alk_thol3$ROCK.NAME)
+cnt_rocks3
 
 ##so after all that work, it turns out that when filtered to "hawaii", I am left
 ## with no alkali basalt samples to compare against

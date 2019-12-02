@@ -1,39 +1,19 @@
----
-title: "Final Project 490"
+#Examination of major elements in Hawaiian Basalts
+##by Julie M. Coulombe
 output: github_document
----
 
+##Analysis of Tholeiite vs Alkali Basalt
+###pulled from PetDB.com as: *Feature Name = Ocean Island:Hawaii and Sample Types = igneous:volcanicmafic:alkali basalt, tholeiite, trachybasalt & trachyte*
 
-# Analysis of Tholeiite vs Alkali Basalt in Hawaiian Rocks
+load packages:
 
-'''{r} alkali_thol <- select(mydata, "SAMPLE.ID", "METHOD":"ZR") %>%
-  filter(ROCK.NAME == "ALKALI BASALT" | ROCK.NAME == "THOLEIITE")
-
-cnt_alk <- table(alkali_thol$ROCK.NAME)
-'''
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r}
+library(dplyr)
+library(tidyverse)
+mydata <- read.csv("final_project_490/data/elmnts_data.csv", header = TRUE)
 ```
 
-## GitHub Documents
 
-This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
 
-## Including Code
 
-You can include R code in the document as follows:
 
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
