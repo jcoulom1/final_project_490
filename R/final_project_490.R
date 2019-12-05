@@ -14,6 +14,12 @@ alkali_thol <- select(mydata, "SAMPLE.ID", "METHOD":"ZR") %>%
 cnt_rocks <- table(alkali_thol$ROCK.NAME)
 cnt_rocks
 
+sio2_data <- select(mydata, "SAMPLE.ID", "METHOD":"ZR") %>%  #Lets pull just the rows containing sio2 data
+  filter(SIO2 != "NA") %>%
+  complete(mydata$SIO2)
+cnt_sio2_data <- table(sio2_data)
+cnt_sio2_data
+
 ## there does appear to be enough data to do a chemcial comparision between 
 ## tholeiitic basalt and alkali basalt
 

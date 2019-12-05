@@ -2,7 +2,7 @@
 title: "Hawaiian Basalts"
 author: "Julie M. Coulombe"
 date: "11/30/2019"
-output: html_document
+output: rmarkdown::github_document
 ---
 
 ```{r setup, include=FALSE}
