@@ -35,3 +35,6 @@ added comments and preparing to push branch back to master
 
 Updated all code to recreate and better document progression of data analysis
 
+multiple changes made...rmarkdown code was caught up todate with practice tab. Also got
+rmarkdown to knit to a document.  Just changed output to github, hoping after push it 
+will run like it did when it went to html (how it was done first)

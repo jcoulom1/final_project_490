@@ -31,8 +31,8 @@ cnt_rocks2 <- table(alk_thol2$ROCK.NAME)
 cnt_rocks2
 
 ##Yay - lots of alkali basalt to compare to thoeliite...let's plot!
-alk_thol2_plot <-  ggplot(alk_thol2, aes(x = alk_thol2$SIO2, y = alk_thol2$NA2O + alk_thol2$K2O)) +
-  geom_line()
+alk_thol2_plot <-  ggplot(alk_thol2, aes(x = SIO2, y = NA2O + K2O)) +
+  geom_point()
 alk_thol2_plot
 
 ##this plot looks crazy, what happened??  Going back to review my new data set, I discover
@@ -52,10 +52,12 @@ cnt_rocks3
 sio2_sort <- select(mydata_2, "SAMPLE.ID":"TITLE", "METHOD":"ZR") %>%  ##whittle down the columns to just the one's needed
   filter(mydata_2$SIO2 != "NA") %>%  ##filter for only those rows with data avail for sio2
   filter(grepl("HAWAII", TITLE)) ##filter for just samples from hawaii
+
+
   
 ## create a plot that looks at the new data and compares sio2 with mgo
-sio2_plot2 <- ggplot(sio2_sort, aes(x = sio2_sort$SIO2, y = sio2_sort$MGO)) + ##created plot for sio2 to mgo
-  geom_line() +   ## made it a line plot
+sio2_plot2 <- ggplot(sio2_sort, aes(x = SIO2, y = MGO)) + ##created plot for sio2 to mgo
+  geom_point() +   ## made it a line plot
   geom_smooth() +  ## added a trend line
   ggtitle("SiO2 compared to MgO") +  ## gave it a title
   xlab("SiO2") +  ## labeled the axes
