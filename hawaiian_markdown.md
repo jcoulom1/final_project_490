@@ -47,7 +47,7 @@ alk_thol_plot
 
     ## Warning: Removed 4271 rows containing missing values (geom_point).
 
-![](hawaiian_markdown_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+![](hawaiian_markdown_files/figure-gfm/Plot%20of%20SIO2%20vs%20Na2O%20&%20K2O-1.png)<!-- -->
 
 This plot looks a little crazy - determined that data pull from database
 did not filter for Hawaii samples only. Let’s try to do this in R
@@ -90,4 +90,4 @@ sio2_plot2
 
     ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
 
-![](hawaiian_markdown_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](hawaiian_markdown_files/figure-gfm/Plot%20SIO2%20vs%20MgO-1.png)<!-- -->

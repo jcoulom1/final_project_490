@@ -52,3 +52,9 @@ vector (not what I wanted).  I have tried everything I could think of to
 resolve this, including nesting if/else statements, subsetting, and a number
 of other things but this is going to have to be it.
 
+Final message before submitting.  Made multiple attemts to include shiny app
+in RMarkdown file but kept getting an error message that temp file did not
+exist.  Tried to use correct url but could not determine
+
+Postiing all as is for final project
+
