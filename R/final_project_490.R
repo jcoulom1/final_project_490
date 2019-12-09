@@ -2,7 +2,7 @@
 #Begin Project
 #####
 ## Load data and packages into R
-mydata<-read.csv("final_project_490/data/elmnts_data.csv", header = TRUE)
+mydata<-read.csv("final_project_490/data/elmnts_data.csv")
 library(dplyr)
 library(tidyverse)
 
@@ -26,7 +26,7 @@ cnt_sio2_data
 ##Let's load a different data set and see if we can pull more information
 
 ## first upload new data set
-mydata_2 <- read.csv("final_project_490/data/earthchem_dataset2.csv", header = TRUE)
+mydata_2 <- read.csv("final_project_490/data/earthchem_dataset2.csv")
 
 ## Let's see if there are more Alkali vs Tholeiite choices available
 alk_thol2 <- select(mydata_2, "SAMPLE.ID":"TITLE", "METHOD":"ZR") %>%  ##whittle down the columns to just the one's needed

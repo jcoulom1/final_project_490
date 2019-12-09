@@ -42,3 +42,13 @@ will run like it did when it went to html (how it was done first)
 tried to change output on rmarkdown again - to output: rmarkdown::github_document
 saved all work
 
+created shiny app for someone to run plots by choosing their element to run
+against SIO2, and give their plot a name.  Included action button that will not
+generate plot until choices are made.
+
+Cannot make plot work correctly - dropdown list of variables not tied to vector
+when I tie it to vectors the drop down includes all the data elements in the
+vector (not what I wanted).  I have tried everything I could think of to 
+resolve this, including nesting if/else statements, subsetting, and a number
+of other things but this is going to have to be it.
+
